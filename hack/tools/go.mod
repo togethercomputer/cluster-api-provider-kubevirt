@@ -2,6 +2,8 @@ module sigs.k8s.io/cluster-api-provider-aws/hack/tools
 
 go 1.22.0
 
+toolchain go1.26.10
+
 require (
 	gotest.tools/gotestsum v1.12.0
 	k8s.io/code-generator v0.30.1
