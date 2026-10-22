@@ -48,8 +48,6 @@ endif
 CONTROLLER_GEN := $(abspath $(TOOLS_BIN_DIR)/controller-gen)
 CONVERSION_GEN := $(abspath $(TOOLS_BIN_DIR)/conversion-gen)
 GOTESTSUM := $(abspath $(TOOLS_BIN_DIR)/gotestsum)
-KUSTOMIZE_IMAGE = registry.k8s.io/kustomize/kustomize:v3.8.7
-KUSTOMIZE ?= docker run $(KUSTOMIZE_IMAGE)
 
 # Define Docker related variables. Releases should modify and double check these vars.
 REGISTRY ?= 127.0.0.1:5000
@@ -213,9 +211,9 @@ modules: ## Runs go mod to ensure modules are up to date.
 
 .PHONY: docker-pull-prerequisites
 docker-pull-prerequisites:
-	docker pull docker.io/docker/dockerfile:1.4
+	docker pull docker.io/docker/dockerfile:1
 	docker pull docker.io/library/golang:1.26.10
-	docker pull gcr.io/distroless/static:latest
+	docker pull gcr.io/distroless/static:nonroot
 
 .PHONY: docker-build
 docker-build: docker-pull-prerequisites ## Build the docker image for controller-manager

@@ -316,8 +316,8 @@ spec:
   template:
     spec:
       containers:
-      - name: fedora
-        image: fedora:35
+      - name: curl
+        image: docker.io/curlimages/curl:8.23.0
         command:
           - curl
           - "${lb_ip}:${lb_port}"
