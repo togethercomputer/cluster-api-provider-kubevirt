@@ -214,7 +214,7 @@ modules: ## Runs go mod to ensure modules are up to date.
 .PHONY: docker-pull-prerequisites
 docker-pull-prerequisites:
 	docker pull docker.io/docker/dockerfile:1.4
-	docker pull docker.io/library/golang:1.22.0
+	docker pull docker.io/library/golang:1.26.10
 	docker pull gcr.io/distroless/static:latest
 
 .PHONY: docker-build
@@ -340,7 +340,7 @@ goimports:
 
 GOLANGCI_LINT = $(shell pwd)/bin/golangci-lint
 golangci-lint: ## Download golangci-lint locally if necessary.
-	$(call go-install-tool,$(GOLANGCI_LINT),github.com/golangci/golangci-lint/cmd/golangci-lint@v1.54.2)
+	$(call go-install-tool,$(GOLANGCI_LINT),github.com/golangci/golangci-lint/cmd/golangci-lint@v1.64.8)
 
 .PHONY: linter
 linter: golangci-lint
