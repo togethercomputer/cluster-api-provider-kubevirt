@@ -89,7 +89,7 @@ metadata:
 spec:
   containers:
   - name: sonobuoy
-    image: registry.access.redhat.com/ubi8/ubi:8.0
+    image: registry.access.redhat.com/ubi8/ubi:8.10
     env:
     - name: KUBECONFIG
       value: /etc/kubernetes/kubeconfig/value
